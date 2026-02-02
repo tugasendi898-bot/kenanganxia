@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Kenangan</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: "Poppins", sans-serif;
+            background: linear-gradient(135deg, #ffecd2, #fcb69f);
+            color: #4b2e2e;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 42px;
+            margin-bottom: 10px;
+        }
+
+        .back {
+            display: block;
+            width: fit-content;
+            margin: 10px auto 20px auto;
+            padding: 12px 30px;
+            background: #ff7f50;
+            color: white;
+            font-size: 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .back:hover {
+            transform: scale(1.07);
+            background: #ff966f;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 10px;
+        }
+
+        .photo-card {
+            background: rgba(255,255,255,0.4);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        .photo-card img {
+            width: 100%;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .photo-card img:hover {
+            transform: scale(1.05);
+        }
+
+        .caption {
+            margin-top: 8px;
+            font-size: 16px;
+            color: #4b2e2e;
+        }
+
+        /* FULLSCREEN MODE */
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0,0,0,0.9);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+            cursor: pointer;
+        }
+
+        .fullscreen img {
+            width: 90%;
+            max-width: 900px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Galeri Kenangan Kelas 12</h1>
+    <a class="back" href="index.html">⟵ Kembali ke Beranda</a>
+
+    <div class="container">
+
+        <!-- FOTO 1 -->
+        <div class="photo-card">
+            <img src="" alt="" onclick="openFull(this.src)">
+            <div class="caption">Kebersamaan di kelas</div>
+        </div>
+
+        <!-- FOTO 2 -->
+        <div class="photo-card">
+            <img src="foto suka suka (11).jpg" alt="" onclick="openFull(this.src)">
+            <div class="caption">Belajar, ngobrol, tertawa</div>
+        </div>
+
+        <!-- FOTO 3 -->
+        <div class="photo-card">
+            <img src="KELAS 12. Tugas nikah (2).jpg" alt="" onclick="openFull(this.src)">
+            <div class="caption">Momen yang tidak akan terulang (Tugas Nikah) </div>
+        </div>
+
+        <!-- Tambah foto berikutnya copy bagian ini -->
+        <!--
+        <div class="photo-card">
+            <img src="NAMAFOTO.jpg" onclick="openFull(this.src)">
+            <div class="caption">Tulis keterangannya disini</div>
+        </div>
+        -->
+
+    </div>
+
+    <!-- FULLSCREEN BOX -->
+    <div id="fullscreenBox" class="fullscreen" style="display:none;" onclick="closeFull()">
+        <img id="fullImg" src="">
+    </div>
+
+    <script>
+        function openFull(src) {
+            document.getElementById("fullscreenBox").style.display = "flex";
+            document.getElementById("fullImg").src = src;
+        }
+
+        function closeFull() {
+            document.getElementById("fullscreenBox").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>
